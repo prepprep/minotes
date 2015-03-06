@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-06 10:13:42
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-06 12:59:55
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:195266172154f072e7e1d5d1-26543587%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6f08f203ad985af6d37c47a8f8ddd623fe45790' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1425636815,
+      1 => 1425643581,
       2 => 'file',
     ),
   ),
@@ -44,7 +44,8 @@ $_smarty_tpl->tpl_vars['note']->_loop = true;
 ?>
             <div class="notes-list-item">
                 <span class="notes-list-item-title"><a href="index.php?action=navigate&id=<?php echo $_smarty_tpl->tpl_vars['note']->value['id'];?>
-" <?php if ($_smarty_tpl->tpl_vars['note']->value['id']==$_smarty_tpl->tpl_vars['ACTIVE_NOTE_ID']->value) {?>class='active'<?php }?>><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['note']->value['content'],20);?>
+" 
+                <?php if ($_smarty_tpl->tpl_vars['note']->value['id']==$_smarty_tpl->tpl_vars['ACTIVE_NOTE_ID']->value) {?>class='active'<?php }?>><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['note']->value['content'],20);?>
 </a></span>
                 <span class="notes-list-item-timestamp"><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['note']->value['last_modified'],"%b %d");?>
 </span>
@@ -58,7 +59,6 @@ $_smarty_tpl->tpl_vars['note']->_loop = true;
             <span><a href="index.php?action=delete">Delete</a></span>&nbsp;|&nbsp;
             <span>
                 <a href="#" onclick="email()">Email</a>
-                
             </span>
             <span class="right">Fname Lname</span>
         </div>

@@ -9,11 +9,19 @@ and open the template in the editor.
         <title>Sending Email</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/cdn/zDialog.js"></script>
         <script>
+            /**
+             * Close the popup window.
+             * @returns {undefined}
+             */
             function closeDlg() {
                parentDialog.close();
             }
-            
+            /**
+             * Submit the form.
+             * @returns {undefined}
+             */
             function onSubmit() {
                 var fo = document.getElementById("form");
                 fo.submit();
@@ -22,7 +30,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            
+            <!--This form is used to collect the information of the email.-->
             <form id="form" action="index.php?action=email" method="post">
                 <table>
                     <tr>
