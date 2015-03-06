@@ -3,8 +3,8 @@
 }//Set the default font to all text in the html page.
 
 body {
-    padding: 0px; //Set the blank space outside the content box.
-    margin: 0px; //Set tht blank space inside the content box
+    padding: 0px; //Set the blank space inside the content box.
+    margin: 0px; //Set tht blank space outside the content box
     min-width: 960px;
 }//Set the style of body.
 
