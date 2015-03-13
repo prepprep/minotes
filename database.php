@@ -5,6 +5,7 @@ require 'vars.php';
 //line just once.
 
 /**
+ * The purpose of this function is to send emails.
  * 
  * @param type $to
  * @param type $subject
@@ -39,6 +40,11 @@ function email($to, $subject, $id) {
     }
 }
 
+/**
+ * This function is to insert content to the notes.
+ * 
+ * @param type $content
+ */
 function createNote($content) {
 
     try {
@@ -53,6 +59,12 @@ function createNote($content) {
     }
 }
 
+/**
+ * This function is used to get all the elements in the notes
+ * and place them in descending order.
+ * 
+ * @return type
+ */
 function getNotes() {
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);
@@ -67,6 +79,12 @@ function getNotes() {
     }
 }
 
+/**
+ * Each row in the table notes has an id, this function selects the 
+ * minimum id as default.
+ * 
+ * @return type string
+ */
 function getMinId() {
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);
@@ -81,6 +99,12 @@ function getMinId() {
     }
 }
 
+
+/**
+ * This function choose the maximum id as default id.
+ * 
+ * @return type string
+ */
 function getMaxId() {
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);
@@ -95,6 +119,12 @@ function getMaxId() {
     }
 }
 
+/**
+ * This function aims to check whether the input id is in the table.
+ * 
+ * @param type $id
+ * @return type
+ */
 function isValid($id) {
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);
@@ -110,6 +140,14 @@ function isValid($id) {
     }
 }
 
+
+/**
+ * This function is trying to delete all the elements associated with
+ * the selected id.
+ * 
+ * @param type $id
+ * 
+ */
 function deleteNote($id) {
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);
@@ -123,6 +161,13 @@ function deleteNote($id) {
     }
 }
 
+/**
+ * When the content of the notes has been modified, this function will update
+ * the modified content in the database.
+ * 
+ * @param type $id
+ * @param type $newContent
+ */
 function updateNote($id, $newContent) {
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);

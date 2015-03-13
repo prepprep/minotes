@@ -1,12 +1,12 @@
 * {
     font-family: sans-serif, arial;
-}//Set the default font to all text in the html page.
+}/*Set the default font to all text in the html page.*/
 
 body {
-    padding: 0px; //Set the blank space inside the content box.
-    margin: 0px; //Set tht blank space outside the content box
+    padding: 0px; /*Set the blank space inside the content box.*/
+    margin: 0px; /*Set tht blank space outside the content box*/
     min-width: 960px;
-}//Set the style of body.
+}/*Set the style of body.*/
 
 a, a:visited {
     text-decoration: none;
@@ -15,7 +15,7 @@ a, a:visited {
 
 a.active {
     text-decoration: underline;
-}//Underline the selected content.
+}/*nderline the selected content.*/
 
 h1, h2, h3, h4, h5, h6 {
     color: #E19807
@@ -23,16 +23,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #notes-list {
     width: 300px; 
-    float: left; //Floating on the left.
+    float: left; /*Floating on the left.*/
     border-right: 1px solid lightgrey; 
     height: 100%; 
-    background-image: url("images/ListBg.png"); //Set background image.
-    //The background image will be repeated both vertically and horizontally.
+    background-image: url("images/ListBg.png"); /*Set background image.*/
+    /*The background image will be repeated both vertically and horizontally.*/
     background-repeat: repeat;
-    //Overflow specifies what to do if the content of the element
-    //exceeds the size of the element's box.
+    /*Overflow specifies what to do if the content of the element*/
+    /*exceeds the size of the element's box.*/
     overflow: none;
-}//Set the default note-list style/
+}/*Set the default note-list style*/
 
 .notes-list-item-title {
     float: left; 
@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #notepad {
+    /**/
     background-image: url('images/PadBg.png'); 
     background-repeat: repeat; 
     height: 100%;
@@ -79,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #tinymce-holder {
-    position: fixed;//Specifies the position of the box.
+    position: fixed;/*Specifies the position of the box.*/
     left: 300px;
 }
 
