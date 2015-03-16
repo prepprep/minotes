@@ -52,11 +52,11 @@ switch($_REQUEST['action']) {
         }
         
         break;
-    case 'addcomment':
-        if (!empty($_REQUEST['comment'])) {
-            updateComment($activeNoteId, $_REQUEST['comment']);
+    case 'reminder':
+        if (!empty($_REQUEST['reminder'])) {
+            addReminder($activeNoteId, $_REQUEST['reminder']);
         }else {
-            echo 'error';
+            echo '<script>alert("Reminder could not be empty!");</script>';
         }
         break;
     

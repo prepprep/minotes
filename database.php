@@ -185,7 +185,7 @@ function updateNote($id, $newContent) {
     }
 }
 
-function updateComment($id, $newComment) {
+function addReminder($id, $newComment) {
     
     try {
         $connection = new PDO(db_dsn, db_username, db_passwd);
