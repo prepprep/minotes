@@ -52,6 +52,14 @@ switch($_REQUEST['action']) {
         }
         
         break;
+    case 'addcomment':
+        if (!empty($_REQUEST['comment'])) {
+            updateComment($activeNoteId, $_REQUEST['comment']);
+        }else {
+            echo 'error';
+        }
+        break;
+    
 }
 
 //initializing an smarty object.

@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #notes-list {
-    width: 300px; 
+    width: 310px; 
     float: left; /*Floating on the left.*/
     border-right: 1px solid lightgrey; 
     height: 100%; 
@@ -65,23 +65,36 @@ h1, h2, h3, h4, h5, h6 {
     height: 10%;
 }
 
-#content {
+#tinymce-holder {
     border: none;  
     background-image: url('images/PadBg.png'); 
     background-repeat: repeat;
     font-size: 18px;
     height: auto;
     width: auto;
-    
+    margin: 20px;
+    border: 1px grey solid;
+    position: fixed;
+    left: 300px;
+
 }
 
 .left {
+
     float: left;
 }
 
-#tinymce-holder {
-    position: fixed;/*Specifies the position of the box.*/
+/*#tinymce-holder {
+    Specifies the position of the box.
+    position: fixed;
     left: 300px;
+    width: 850px;
+    height: 200px;
+}*/
+
+
+#areaComment {
+   float: left;
 }
 
 .right {

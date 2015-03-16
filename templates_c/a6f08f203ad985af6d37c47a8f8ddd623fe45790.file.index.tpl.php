@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-06 12:59:55
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-16 23:25:39
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:195266172154f072e7e1d5d1-26543587%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a6f08f203ad985af6d37c47a8f8ddd623fe45790' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1425643581,
+      1 => 1426548329,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ if (!is_callable('smarty_modifier_date_format')) include '/home/kai/public_html/
 
 
 <div id="container">
-    
+
     <div id="notes-list">
         <div id="notes-list-header" class="header">
             <span class="left">miNotes</span>
@@ -45,21 +45,22 @@ $_smarty_tpl->tpl_vars['note']->_loop = true;
             <div class="notes-list-item">
                 <span class="notes-list-item-title"><a href="index.php?action=navigate&id=<?php echo $_smarty_tpl->tpl_vars['note']->value['id'];?>
 " 
-                <?php if ($_smarty_tpl->tpl_vars['note']->value['id']==$_smarty_tpl->tpl_vars['ACTIVE_NOTE_ID']->value) {?>class='active'<?php }?>><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['note']->value['content'],20);?>
+                                                       <?php if ($_smarty_tpl->tpl_vars['note']->value['id']==$_smarty_tpl->tpl_vars['ACTIVE_NOTE_ID']->value) {?>class='active'<?php }?>><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['note']->value['content'],20);?>
 </a></span>
                 <span class="notes-list-item-timestamp"><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['note']->value['last_modified'],"%b %d");?>
 </span>
             </div>      
         <?php } ?>
     </div>
-    
+
     <div id="notepad">
         <div id="notepad-header" class="header">
             <span><a href="#" onclick="document.getElementById('updateForm').submit();">Save</a></span>&nbsp;|&nbsp;
             <span><a href="index.php?action=delete">Delete</a></span>&nbsp;|&nbsp;
             <span>
-                <a href="#" onclick="email()">Email</a>
+                <a href="#" onclick="email()">Email</a>&nbsp;|&nbsp;
             </span>
+            
             <span class="right">Fname Lname</span>
         </div>
         <div>
@@ -69,17 +70,26 @@ foreach ($_from as $_smarty_tpl->tpl_vars['note']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['note']->_loop = true;
 ?>
                 <?php if ($_smarty_tpl->tpl_vars['note']->value['id']==$_smarty_tpl->tpl_vars['ACTIVE_NOTE_ID']->value) {?>
-                <span id="timestamp"><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['note']->value['last_modified'],"%B %d, %r");?>
+                    <span id="timestamp"><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['note']->value['last_modified'],"%B %d, %r");?>
 </span>
-                <form action="index.php" method="POST" id="updateForm">
+
                     <div id="tinymce-holder">
-                        <textarea rows="25" cols="67" id="content" name="content" style="margin: 20px; border: 1px grey solid"><?php echo $_smarty_tpl->tpl_vars['note']->value['content'];?>
+                        <form action="index.php" method="POST" id="updateForm">
+                            <div id="areaContent">
+                                <textarea rows="27" cols="70" id="content" name="content"><?php echo $_smarty_tpl->tpl_vars['note']->value['content'];?>
 </textarea>
-                    </div>  
-                    <input type="hidden" name="action" value="update"/>
-                </form>
-                    
-                    
+                                <input type="hidden" name="action" value="update"/>
+                            </div>
+                        </form>
+                        <form action="index.php?action=addcomment" method="post" id="updateComment">
+                            <div id="areaComment">
+                                <textarea rows="3" cols="70" name="comment" id="comment"><?php echo $_smarty_tpl->tpl_vars['note']->value['comment'];?>
+</textarea>
+                                <br/><input type="submit" name="submit" value="Add Reminder:"/>
+                            </div>
+                        </form>   
+                    </div>
+
                 <?php }?>
             <?php } ?>
         </div>

@@ -185,4 +185,22 @@ function updateNote($id, $newContent) {
     }
 }
 
+function updateComment($id, $newComment) {
+    
+    try {
+        $connection = new PDO(db_dsn, db_username, db_passwd);
+        $connection->exec('SET search_path TO public');
+        //Update the content of the target id.
+        $query = $connection->prepare("UPDATE notes
+                                       SET comment = :comment,
+                                           last_modified = CURRENT_TIMESTAMP
+                                       WHERE id = :id");
+        $query->bindParam(':id', $id);
+        $query->bindParam(':comment', $newComment);
+        $query->execute();
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
+
 ?>
